@@ -13,6 +13,7 @@ Este é o código-fonte do site oficial da nossa hospedagem de Minecraft. O site
 
 - Contato em discord por: https://discord.gg/TtRDXFy3A
 - Suporte em discord por: https://discord.gg/TtRDXFy3A na conversa SUPORTE
+- Invite e planos mensais em : file:///C:/Users/Jo%C3%A3o%20Ant%C3%B4nio/Downloads/Lotus%20Hosting/index.html
 
 ## 🛠️ Tecnologias Utilizadas
 
