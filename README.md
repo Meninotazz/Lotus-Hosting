@@ -11,7 +11,8 @@ Este é o código-fonte do site oficial da nossa hospedagem de Minecraft. O site
 - 💰 **Tabela de Planos:** Exibição clara de recursos (RAM, CPU, Armazenamento) e preços.
 - 🛒 **Integração Direta:** Botões direcionados para checkout e suporte via Discord.
 
----
+- Contato em discord por: https://discord.gg/TtRDXFy3A
+- Suporte em discord por: https://discord.gg/TtRDXFy3A na conversa SUPORTE
 
 ## 🛠️ Tecnologias Utilizadas
 
