@@ -4,7 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospedagem Lotus - Minecraft</title>
-  <link rel="stylesheet" href="estilo.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      color: #55ff55;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #cccccc;
+      font-size: 16px;
+    }
+
+    main h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .container-planos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card-plano {
+      background-color: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 30px 20px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card-plano:hover {
+      transform: translateY(-5px);
+      border-color: #55ff55;
+    }
+
+    .card-plano h3 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .preco {
+      color: #ff9900;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .card-plano ul {
+      list-style: none;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .card-plano li {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #dddddd;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #3bff49;
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 12px 0;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #2ce039;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,7 +121,7 @@
       
       <div class="card-plano">
         <h3>Plano Básico</h3>
-        <p class="preco">R$ 18,50/mês</p>
+        <p class="preco">R$ 15,00/mês</p>
         <ul>
           <li>2 GB RAM NVMe</li>
           <li>Até 1 Mod</li>
@@ -31,7 +133,7 @@
 
       <div class="card-plano">
         <h3>Plano Super</h3>
-        <p class="preco">R$ 35,50/mês</p>
+        <p class="preco">R$ 25,00/mês</p>
         <ul>
           <li>3 GB RAM NVMe</li>
           <li>Até 15 Mods</li>
@@ -43,9 +145,9 @@
 
       <div class="card-plano">
         <h3>Plano Mega</h3>
-        <p class="preco">R$ 60,00/mês</p>
+        <p class="preco">R$ 45,00/mês</p>
         <ul>
-          <li>6 GB RAM NVMe</li>
+          <li>4 GB RAM NVMe</li>
           <li>Até 45 Mods</li>
           <li>Até 60 Plugins</li>
           <li>Painel Pterodactyl</li>
