@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospedagem Lotus - Minecraft por Hora</title>
+  <title>Hospedagem Lotus - Minecraft</title>
+  
+  <!-- Ícone da aba do navegador (Favicon) -->
+  <link rel="icon" type="image/png" href="logo.png">
+
   <style>
     * {
       margin: 0;
@@ -19,14 +23,39 @@
       padding: 40px 20px;
     }
 
+    /* Estilização do Topo com a Logo Alinhada */
     header {
       margin-bottom: 30px;
     }
 
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto 15px auto;
+    }
+
+    .logo-site {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      /* Mantém o estilo Pixel Art nítido sem borrar */
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      box-shadow: 0 0 15px rgba(85, 255, 85, 0.2);
+    }
+
+    .header-texto {
+      text-align: left;
+    }
+
     header h1 {
       color: #55ff55;
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 38px;
+      margin-bottom: 8px;
     }
 
     header p {
@@ -90,7 +119,6 @@
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, border-color 0.2s ease;
-      position: relative;
     }
 
     .card-plano:hover {
@@ -159,14 +187,29 @@
     .btn:hover {
       background-color: #2ce039;
     }
+
+    /* Responsividade para Celulares */
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+      }
+      .header-texto {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Hospedagem Lotus</h1>
-    <p>Servidores de Minecraft de alta performance sob demanda.</p>
-    <div class="ping-badge">⚡ Latência Ultra Baixa: 10 ms a 14 ms</div>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo Hospedagem Lotus" class="logo-site">
+      <div class="header-texto">
+        <h1>Hospedagem Lotus</h1>
+        <p>Servidores de Minecraft de alta performance sob demanda.</p>
+        <div class="ping-badge">⚡ Latência Ultra Baixa: 10 ms a 14 ms</div>
+      </div>
+    </div>
   </header>
 
   <div class="destaque-flex">
