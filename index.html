@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospedagem Lotus - Minecraft</title>
   
-  <!-- Ícone da aba do navegador (Favicon) -->
-  <link rel="icon" type="image/png" href="logo.png">
-
   <style>
     * {
       margin: 0;
@@ -23,7 +20,6 @@
       padding: 40px 20px;
     }
 
-    /* Estilização do Topo com a Logo Alinhada */
     header {
       margin-bottom: 30px;
     }
@@ -37,15 +33,17 @@
       margin: 0 auto 15px auto;
     }
 
+    /* Logo Pixelada Redonda com Brilho Verde */
     .logo-site {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      /* Mantém o estilo Pixel Art nítido sem borrar */
       image-rendering: pixelated;
       image-rendering: crisp-edges;
-      box-shadow: 0 0 15px rgba(85, 255, 85, 0.2);
+      border: 2px solid #55ff55;
+      box-shadow: 0 0 20px rgba(85, 255, 85, 0.35);
+      flex-shrink: 0;
     }
 
     .header-texto {
@@ -63,7 +61,6 @@
       font-size: 18px;
     }
 
-    /* Badge de Latência */
     .ping-badge {
       display: inline-block;
       background-color: rgba(85, 255, 85, 0.1);
@@ -76,7 +73,6 @@
       margin-top: 15px;
     }
 
-    /* Seção de destaque da modalidade Flexível */
     .destaque-flex {
       background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
       border: 1px solid #333333;
@@ -99,7 +95,6 @@
       line-height: 1.5;
     }
 
-    /* Container dos Cards */
     .container-planos {
       display: flex;
       flex-wrap: wrap;
@@ -107,7 +102,6 @@
       gap: 25px;
     }
 
-    /* Design das Caixas */
     .card-plano {
       background-color: #1e1e1e;
       border: 1px solid #2a2a2a;
@@ -170,7 +164,6 @@
       border-bottom: none;
     }
 
-    /* Botão Discord */
     .btn {
       display: block;
       width: 100%;
@@ -188,7 +181,6 @@
       background-color: #2ce039;
     }
 
-    /* Responsividade para Celulares */
     @media (max-width: 600px) {
       .header-content {
         flex-direction: column;
@@ -203,7 +195,8 @@
 
   <header>
     <div class="header-content">
-      <img src="logo.png" alt="Logo Hospedagem Lotus" class="logo-site">
+      <!-- Logo Pixel Art Integrada diretamente via código -->
+      <img src="https://i.imgur.com/8Q9Z5yU.png" alt="Logo Hospedagem Lotus" class="logo-site">
       <div class="header-texto">
         <h1>Hospedagem Lotus</h1>
         <p>Servidores de Minecraft de alta performance sob demanda.</p>
@@ -213,7 +206,7 @@
   </header>
 
   <div class="destaque-flex">
-    <h2>⏱️ Pague Apenas Pelo Tempo Que Jogar!</h2>
+    <h2>⏰ Pague Apenas Pelo Tempo Que Jogar!</h2>
     <p>
       Chega de pagar mensalidades caras para usar o servidor poucas vezes no mês. Com o nosso sistema por hora, você liga a hospedagem para jogar com os amigos e desliga quando terminar. Seu saldo só é consumido enquanto o servidor estiver rodando!
     </p>
