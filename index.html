@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospedagem Lotus - Minecraft</title>
+  <title>Hospedagem Lotus - Minecraft por Hora</title>
   <style>
     * {
       margin: 0;
@@ -20,25 +20,57 @@
     }
 
     header {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     header h1 {
       color: #55ff55;
-      font-size: 32px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
     header p {
       color: #cccccc;
-      font-size: 16px;
+      font-size: 18px;
     }
 
-    main h2 {
-      font-size: 24px;
-      margin-bottom: 30px;
+    /* Badge de Latência */
+    .ping-badge {
+      display: inline-block;
+      background-color: rgba(85, 255, 85, 0.1);
+      border: 1px solid #55ff55;
+      color: #55ff55;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin-top: 15px;
     }
 
+    /* Seção de destaque da modalidade Flexível */
+    .destaque-flex {
+      background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
+      border: 1px solid #333333;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .destaque-flex h2 {
+      color: #ff9900;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .destaque-flex p {
+      color: #dddddd;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* Container dos Cards */
     .container-planos {
       display: flex;
       flex-wrap: wrap;
@@ -46,17 +78,19 @@
       gap: 25px;
     }
 
+    /* Design das Caixas */
     .card-plano {
       background-color: #1e1e1e;
       border: 1px solid #2a2a2a;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 30px 20px;
-      width: 280px;
+      width: 290px;
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
     }
 
     .card-plano:hover {
@@ -65,31 +99,50 @@
     }
 
     .card-plano h3 {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
       margin-bottom: 15px;
       color: #ffffff;
     }
 
-    .preco {
+    .preco-hora {
       color: #ff9900;
-      font-size: 26px;
+      font-size: 30px;
       font-weight: bold;
-      margin-bottom: 25px;
+      margin-bottom: 5px;
+    }
+
+    .preco-hora span {
+      font-size: 14px;
+      color: #aaaaaa;
+      font-weight: normal;
+    }
+
+    .preco-mensal-ref {
+      font-size: 13px;
+      color: #888888;
+      margin-bottom: 20px;
     }
 
     .card-plano ul {
       list-style: none;
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .card-plano li {
-      font-size: 16px;
-      margin-bottom: 12px;
+      font-size: 15px;
+      margin-bottom: 10px;
       color: #dddddd;
+      border-bottom: 1px solid #282828;
+      padding-bottom: 8px;
     }
 
+    .card-plano li:last-child {
+      border-bottom: none;
+    }
+
+    /* Botão Discord */
     .btn {
       display: block;
       width: 100%;
@@ -112,47 +165,63 @@
 
   <header>
     <h1>Hospedagem Lotus</h1>
-    <p>Servidores de Minecraft de alta performance com proteção total.</p>
+    <p>Servidores de Minecraft de alta performance sob demanda.</p>
+    <div class="ping-badge">⚡ Latência Ultra Baixa: 10 ms a 14 ms</div>
   </header>
 
+  <div class="destaque-flex">
+    <h2>⏱️ Pague Apenas Pelo Tempo Que Jogar!</h2>
+    <p>
+      Chega de pagar mensalidades caras para usar o servidor poucas vezes no mês. Com o nosso sistema por hora, você liga a hospedagem para jogar com os amigos e desliga quando terminar. Seu saldo só é consumido enquanto o servidor estiver rodando!
+    </p>
+  </div>
+
   <main>
-    <h2>Nossos Planos</h2>
     <div class="container-planos">
       
+      <!-- Plano Básico -->
       <div class="card-plano">
         <h3>Plano Básico</h3>
-        <p class="preco">R$ 18,50/mês</p>
+        <p class="preco-hora">R$ 0,30 <span>/ hora</span></p>
+        <p class="preco-mensal-ref">Ou R$ 15,00 / mês fixo</p>
         <ul>
-          <li>2 GB RAM NVMe</li>
+          <li><strong>2 GB RAM</strong> NVMe</li>
           <li>Até 1 Mod</li>
           <li>Até 3 Plugins</li>
           <li>Painel Pterodactyl</li>
+          <li>Tempo Personalizável</li>
         </ul>
-        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Comprar no Discord</a>
+        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
       </div>
 
+      <!-- Plano Super -->
       <div class="card-plano">
         <h3>Plano Super</h3>
-        <p class="preco">R$ 35,50/mês</p>
+        <p class="preco-hora">R$ 0,50 <span>/ hora</span></p>
+        <p class="preco-mensal-ref">Ou R$ 25,00 / mês fixo</p>
         <ul>
-          <li>3 GB RAM NVMe</li>
+          <li><strong>3 GB RAM</strong> NVMe</li>
           <li>Até 15 Mods</li>
           <li>Até 5 Plugins</li>
           <li>Painel Pterodactyl</li>
+          <li>Tempo Personalizável</li>
         </ul>
-        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Comprar no Discord</a>
+        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
       </div>
 
+      <!-- Plano Mega -->
       <div class="card-plano">
         <h3>Plano Mega</h3>
-        <p class="preco">R$ 60,50/mês</p>
+        <p class="preco-hora">R$ 0,82 <span>/ hora</span></p>
+        <p class="preco-mensal-ref">Ou R$ 45,00 / mês fixo</p>
         <ul>
-          <li>4 GB RAM NVMe</li>
+          <li><strong>4 GB RAM</strong> NVMe</li>
           <li>Até 45 Mods</li>
           <li>Até 60 Plugins</li>
           <li>Painel Pterodactyl</li>
+          <li>Tempo Personalizável</li>
         </ul>
-        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Comprar no Discord</a>
+        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
       </div>
 
     </div>
