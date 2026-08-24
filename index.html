@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospedagem Lotus - Minecraft</title>
   
-  <!-- LINHA ADICIONADA: Ícone na aba do navegador -->
   <link rel="icon" type="image/png" href="logo.png">
 
   <style>
@@ -23,8 +22,57 @@
       padding: 40px 20px;
     }
 
+    /* CONTAINER PRINCIPAL PARA ACOMODAR O MENU LATERAL */
+    .layout-container {
+      display: flex;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    /* MENU LATERAL ESQUERDO (Espaço Roxo) */
+    .sidebar-menu {
+      width: 220px;
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-btn {
+      background-color: #242424;
+      color: #ffffff;
+      border: 1px solid #333333;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .sidebar-btn:hover {
+      background-color: #333333;
+      border-color: #55ff55;
+      color: #55ff55;
+    }
+
+    /* CONTEÚDO PRINCIPAL (DIREITA) */
+    .main-content {
+      flex: 1;
+      width: 100%;
+    }
+
     header {
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .header-content {
@@ -36,14 +84,12 @@
       margin: 0 auto 15px auto;
     }
 
-    /* Logo Pixelada Redonda com Brilho Verde */
     .logo-site {
       width: 130px;
       height: 130px;
       border-radius: 50%;
       object-fit: cover;
       image-rendering: pixelated;
-      image-rendering: crisp-edges;
       border: 2px solid #55ff55;
       box-shadow: 0 0 20px rgba(85, 255, 85, 0.35);
       flex-shrink: 0;
@@ -79,38 +125,91 @@
     .destaque-flex {
       background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
       border: 1px solid #333333;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      padding: 25px;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      padding: 22px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
     .destaque-flex h2 {
       color: #ff9900;
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: 20px;
+      margin-bottom: 8px;
     }
 
     .destaque-flex p {
       color: #dddddd;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.5;
     }
 
+    /* BARRA DE TRANSIÇÃO ESTILO REIS HOSTING */
+    .switch-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 25px 0 35px 0;
+    }
+
+    .switch-container {
+      position: relative;
+      display: inline-flex;
+      background-color: #1a1a1a;
+      border: 1px solid #333333;
+      border-radius: 30px;
+      padding: 5px;
+      width: 440px;
+      justify-content: space-between;
+    }
+
+    .switch-option {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #aaaaaa;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .switch-option.active {
+      color: #ffffff;
+    }
+
+    .switch-slider {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      height: calc(100% - 10px);
+      width: calc((100% - 10px) / 4);
+      background-color: #d92323;
+      border-radius: 25px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 12px rgba(217, 35, 35, 0.5);
+      z-index: 1;
+    }
+
+    /* CONTAINER DOS 5 COMBOS */
     .container-planos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
     }
 
     .card-plano {
       background-color: #1e1e1e;
       border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      padding: 30px 20px;
-      width: 290px;
+      border-radius: 14px;
+      padding: 25px 18px;
+      width: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -124,43 +223,46 @@
     }
 
     .card-plano h3 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       color: #ffffff;
     }
 
-    .preco-hora {
-      color: #ff9900;
-      font-size: 30px;
+    .preco-container {
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .preco-valor {
+      color: #ffffff;
+      font-size: 26px;
       font-weight: bold;
-      margin-bottom: 5px;
+      line-height: 1.1;
     }
 
-    .preco-hora span {
-      font-size: 14px;
-      color: #aaaaaa;
-      font-weight: normal;
-    }
-
-    .preco-mensal-ref {
+    .preco-periodo {
       font-size: 13px;
-      color: #888888;
-      margin-bottom: 20px;
+      color: #aaaaaa;
+      margin-top: 2px;
     }
 
     .card-plano ul {
       list-style: none;
       width: 100%;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .card-plano li {
-      font-size: 15px;
-      margin-bottom: 10px;
+      font-size: 13px;
+      margin-bottom: 8px;
       color: #dddddd;
       border-bottom: 1px solid #282828;
-      padding-bottom: 8px;
+      padding-bottom: 6px;
     }
 
     .card-plano li:last-child {
@@ -174,14 +276,25 @@
       color: #000000;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
-      padding: 12px 0;
+      font-size: 15px;
+      padding: 10px 0;
       border-radius: 8px;
       transition: background-color 0.2s ease;
     }
 
     .btn:hover {
       background-color: #2ce039;
+    }
+
+    @media (max-width: 900px) {
+      .layout-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar-menu {
+        width: 100%;
+        max-width: 440px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -191,85 +304,217 @@
       .header-texto {
         text-align: center;
       }
+      .switch-container {
+        width: 100%;
+        max-width: 360px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-content">
-      <!-- LINHA ALTERADA: Logo do topo usando a imagem local -->
-      <img src="logo.png" alt="Logo Hospedagem Lotus" class="logo-site">
-      <div class="header-texto">
-        <h1>Hospedagem Lotus</h1>
-        <p>Servidores de Minecraft de alta performance sob demanda.</p>
-        <div class="ping-badge">⚡ Latência Media: 17 ms a 35 ms</div>
-      </div>
-    </div>
-  </header>
+  <div class="layout-container">
+    
+    <!-- MENU LATERAL (ESPAÇO ROXO DA SUA IMAGEM) -->
+    <aside class="sidebar-menu">
+      <a href="#" class="sidebar-btn">🎮 Servidores Minecraft</a>
+      <a href="#" class="sidebar-btn">⚡ Painel Pterodactyl</a>
+      <a href="#" class="sidebar-btn">💬 Suporte Discord</a>
+      <a href="#" class="sidebar-btn">❓ Dúvidas Frequentes</a>
+    </aside>
 
-  <div class="destaque-flex">
-    <h2>⏰ Pague Apenas Pelo Tempo Que Jogar!</h2>
-    <h2>⏰ ou mensalmente personalisando dia e hora!</h2>
-    <h2>⏰ e se quiser me ajudar compre o anual por preços compensaveis!</h2>
-    <p>
-      Chega de pagar mensalidades caras para usar o servidor poucas vezes no mês. Com o nosso sistema por hora, você liga a hospedagem para jogar com os amigos e desliga quando terminar. Seu saldo só é consumido enquanto o servidor estiver rodando!
-    </p>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      
+      <header>
+        <div class="header-content">
+          <img src="logo.png" alt="Logo Hospedagem Lotus" class="logo-site">
+          <div class="header-texto">
+            <h1>Hospedagem Lotus</h1>
+            <p>Servidores de Minecraft de alta performance sob demanda.</p>
+            <div class="ping-badge">⚡ Latência Média: 17 ms a 35 ms</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="destaque-flex">
+        <h2>⏰ Pague Apenas Pelo Tempo Que Jogar!</h2>
+        <p>
+          ou mensalmente personalizando dia e hora! E se quiser me ajudar compre o anual por preços compensáveis!
+        </p>
+      </div>
+
+      <!-- BARRA DE TRANSIÇÃO ESTILO REIS HOSTING -->
+      <div class="switch-wrapper">
+        <div class="switch-container">
+          <div class="switch-slider" id="slider"></div>
+          
+          <div class="switch-option active" onclick="selecionarOpcao(0, 'mensal')">Mensal</div>
+          <div class="switch-option" onclick="selecionarOpcao(1, 'trimestral')">Trimestral</div>
+          <div class="switch-option" onclick="selecionarOpcao(2, 'semestral')">Semestral</div>
+          <div class="switch-option" onclick="selecionarOpcao(3, 'anual')">Anual</div>
+        </div>
+      </div>
+
+      <!-- OS 5 COMBOS COM SEUS PREÇOS EXATOS -->
+      <div class="container-planos">
+        
+        <!-- Combo 1 -->
+        <div class="card-plano">
+          <h3>Combo 1</h3>
+          <div class="preco-container">
+            <div class="preco-valor" id="p1">R$ 23,59</div>
+            <div class="preco-periodo" id="sub1">/ mês</div>
+          </div>
+          <ul>
+            <li><strong>2 GB RAM</strong> NVMe</li>
+            <li>Até 1 Mod</li>
+            <li>Até 3 Plugins</li>
+            <li>Painel Pterodactyl</li>
+            <li>Tempo Personalizável</li>
+          </ul>
+          <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
+        </div>
+
+        <!-- Combo 2 -->
+        <div class="card-plano">
+          <h3>Combo 2</h3>
+          <div class="preco-container">
+            <div class="preco-valor" id="p2">R$ 36,99</div>
+            <div class="preco-periodo" id="sub2">/ mês</div>
+          </div>
+          <ul>
+            <li><strong>3 GB RAM</strong> NVMe</li>
+            <li>Até 10 Mods</li>
+            <li>Até 5 Plugins</li>
+            <li>Painel Pterodactyl</li>
+            <li>Tempo Personalizável</li>
+          </ul>
+          <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
+        </div>
+
+        <!-- Combo 3 -->
+        <div class="card-plano">
+          <h3>Combo 3</h3>
+          <div class="preco-container">
+            <div class="preco-valor" id="p3">R$ 46,69</div>
+            <div class="preco-periodo" id="sub3">/ mês</div>
+          </div>
+          <ul>
+            <li><strong>4 GB RAM</strong> NVMe</li>
+            <li>Até 20 Mods</li>
+            <li>Até 15 Plugins</li>
+            <li>Painel Pterodactyl</li>
+            <li>Tempo Personalizável</li>
+          </ul>
+          <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
+        </div>
+
+        <!-- Combo 4 -->
+        <div class="card-plano">
+          <h3>Combo 4</h3>
+          <div class="preco-container">
+            <div class="preco-valor" id="p4">R$ 65,99</div>
+            <div class="preco-periodo" id="sub4">/ mês</div>
+          </div>
+          <ul>
+            <li><strong>6 GB RAM</strong> NVMe</li>
+            <li>Até 35 Mods</li>
+            <li>Até 30 Plugins</li>
+            <li>Painel Pterodactyl</li>
+            <li>Tempo Personalizável</li>
+          </ul>
+          <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
+        </div>
+
+        <!-- Combo 5 -->
+        <div class="card-plano">
+          <h3>Combo 5</h3>
+          <div class="preco-container">
+            <div class="preco-valor" id="p5">R$ 89,69</div>
+            <div class="preco-periodo" id="sub5">/ mês</div>
+          </div>
+          <ul>
+            <li><strong>8 GB RAM</strong> NVMe</li>
+            <li>Até 50 Mods</li>
+            <li>Até 60 Plugins</li>
+            <li>Painel Pterodactyl</li>
+            <li>Tempo Personalizável</li>
+          </ul>
+          <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
+        </div>
+
+      </div>
+
+    </main>
+
   </div>
 
-  <main>
-    <div class="container-planos">
-      
-      <!-- Plano Básico -->
-      <div class="card-plano">
-        <h3>Plano Básico</h3>
-        <p class="preco-hora">R$ 0,30 <span>/ hora</span></p>
-        <p class="preco-mensal-ref">Ou R$ 21,59 / mês fixo</p>
-        <p class="preco-anual-ref">Ou R$ 169,69 / ano fixo</p>
-        <ul>
-          <li><strong>2 GB RAM</strong> NVMe</li>
-          <li>Até 1 Mod</li>
-          <li>Até 3 Plugins</li>
-          <li>Painel Pterodactyl</li>
-          <li>Tempo Personalizável</li>
-        </ul>
-        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
-      </div>
+  <script>
+    function selecionarOpcao(posicao, tipo) {
+      // Animação da pílula deslizante (0%, 100%, 200%, 300%)
+      const slider = document.getElementById('slider');
+      slider.style.transform = `translateX(${posicao * 100}%)`;
 
-      <!-- Plano Super -->
-      <div class="card-plano">
-        <h3>Plano Super</h3>
-        <p class="preco-hora">R$ 0,50 <span>/ hora</span></p>
-        <p class="preco-mensal-ref">Ou R$ 35,59 / mês fixo</p>
-        <p class="preco-anual-ref">Ou R$ 249,59 / ano fixo fixo</p>
-        <ul>
-          <li><strong>3 GB RAM</strong> NVMe</li>
-          <li>Até 15 Mods</li>
-          <li>Até 5 Plugins</li>
-          <li>Painel Pterodactyl</li>
-          <li>Tempo Personalizável</li>
-        </ul>
-        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
-      </div>
+      // Atualiza o destaque nos textos dos botões
+      const opcoes = document.querySelectorAll('.switch-option');
+      opcoes.forEach((opt, idx) => {
+        if (idx === posicao) {
+          opt.classList.add('active');
+        } else {
+          opt.classList.remove('active');
+        }
+      });
 
-      <!-- Plano Mega -->
-      <div class="card-plano">
-        <h3>Plano Mega</h3>
-        <p class="preco-hora">R$ 0,82 <span>/ hora</span></p>
-        <p class="preco-mensal-ref">Ou R$ 87,69 / mês fixo</p>
-        <p class="preco-anual-ref">Ou R$ 289,99 / ano fixo</p>
-        <ul>
-          <li><strong>6 GB RAM</strong> NVMe</li>
-          <li>Até 45 Mods</li>
-          <li>Até 60 Plugins</li>
-          <li>Painel Pterodactyl</li>
-          <li>Tempo Personalizável</li>
-        </ul>
-        <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
-      </div>
+      // Tabela de preços atualizados conforme o período escolhido
+      const dados = {
+        mensal: {
+          p1: "R$ 23,59", sub1: "/ mês",
+          p2: "R$ 36,99", sub2: "/ mês",
+          p3: "R$ 46,69", sub3: "/ mês",
+          p4: "R$ 65,99", sub4: "/ mês",
+          p5: "R$ 89,69", sub5: "/ mês"
+        },
+        trimestral: {
+          p1: "R$ 27,13", sub1: "/ trimestral",
+          p2: "R$ 42,54", sub2: "/ trimestral",
+          p3: "R$ 53,69", sub3: "/ trimestral",
+          p4: "R$ 75,89", sub4: "/ trimestral",
+          p5: "R$ 103,14", sub5: "/ trimestral"
+        },
+        semestral: {
+          p1: "R$ 30,67", sub1: "/ semestral",
+          p2: "R$ 48,09", sub2: "/ semestral",
+          p3: "R$ 60,70", sub3: "/ semestral",
+          p4: "R$ 85,79", sub4: "/ semestral",
+          p5: "R$ 116,60", sub5: "/ semestral"
+        },
+        anual: {
+          p1: "R$ 36,68", sub1: "/ anual",
+          p2: "R$ 57,52", sub2: "/ anual",
+          p3: "R$ 72,60", sub3: "/ anual",
+          p4: "R$ 102,61", sub4: "/ anual",
+          p5: "R$ 139,47", sub5: "/ anual"
+        }
+      };
 
-    </div>
-  </main>
+      // Atualiza os valores na tela
+      document.getElementById('p1').innerText = dados[tipo].p1;
+      document.getElementById('sub1').innerText = dados[tipo].sub1;
+
+      document.getElementById('p2').innerText = dados[tipo].p2;
+      document.getElementById('sub2').innerText = dados[tipo].sub2;
+
+      document.getElementById('p3').innerText = dados[tipo].p3;
+      document.getElementById('sub3').innerText = dados[tipo].sub3;
+
+      document.getElementById('p4').innerText = dados[tipo].p4;
+      document.getElementById('sub4').innerText = dados[tipo].sub4;
+
+      document.getElementById('p5').innerText = dados[tipo].p5;
+      document.getElementById('sub5').innerText = dados[tipo].sub5;
+    }
+  </script>
 
 </body>
 </html>
