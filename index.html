@@ -26,20 +26,20 @@
       min-height: 100vh;
     }
 
-    /* CONTAINER PRINCIPAL CENTRALIZADO NA TELA */
+    /* CONTAINER AMPLIADO PARA ACOMODAR OS 5 CARDS EM LINHA */
     .layout-container {
       display: flex;
-      max-width: 1200px;
+      max-width: 1400px;
       width: 100%;
       margin: 0 auto;
-      gap: 30px;
+      gap: 25px;
       align-items: flex-start;
       justify-content: center;
     }
 
     /* MENU LATERAL ESQUERDO */
     .sidebar-menu {
-      width: 230px;
+      width: 220px;
       background-color: #1a1a1a;
       border: 1px solid #2a2a2a;
       border-radius: 12px;
@@ -80,11 +80,11 @@
       color: #55ff55;
     }
 
-    /* CONTEÚDO PRINCIPAL (DIREITA) */
+    /* CONTEÚDO PRINCIPAL */
     .main-content {
       flex: 1;
       width: 100%;
-      max-width: 900px;
+      max-width: 1120px;
     }
 
     header {
@@ -141,7 +141,7 @@
     .destaque-flex {
       background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
       border: 1px solid #333333;
-      max-width: 900px;
+      max-width: 100%;
       margin: 0 auto 30px auto;
       padding: 22px;
       border-radius: 12px;
@@ -212,20 +212,23 @@
       z-index: 1;
     }
 
-    /* CONTAINER DOS COMBOS */
+    /* PLANOS FORÇADOS EM UMA ÚNICA LINHA RETA */
     .container-planos {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
     }
 
     .card-plano {
       background-color: #1e1e1e;
       border: 1px solid #2a2a2a;
       border-radius: 14px;
-      padding: 25px 18px;
-      width: 220px;
+      padding: 20px 12px;
+      flex: 1;
+      min-width: 190px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -239,14 +242,14 @@
     }
 
     .card-plano h3 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 12px;
       color: #ffffff;
     }
 
     .preco-container {
-      min-height: 60px;
+      min-height: 55px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -256,13 +259,13 @@
 
     .preco-valor {
       color: #ffffff;
-      font-size: 26px;
+      font-size: 22px;
       font-weight: bold;
       line-height: 1.1;
     }
 
     .preco-periodo {
-      font-size: 13px;
+      font-size: 12px;
       color: #aaaaaa;
       margin-top: 2px;
     }
@@ -274,7 +277,7 @@
     }
 
     .card-plano li {
-      font-size: 13px;
+      font-size: 12px;
       margin-bottom: 8px;
       color: #dddddd;
       border-bottom: 1px solid #282828;
@@ -292,17 +295,18 @@
       color: #000000;
       text-decoration: none;
       font-weight: bold;
-      font-size: 15px;
+      font-size: 13px;
       padding: 10px 0;
       border-radius: 8px;
       transition: background-color 0.2s ease;
+      margin-top: auto;
     }
 
     .btn:hover {
       background-color: #2ce039;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       .layout-container {
         flex-direction: column;
         align-items: center;
@@ -378,7 +382,7 @@
         </div>
       </div>
 
-      <!-- OS 5 COMBOS -->
+      <!-- OS 5 COMBOS EM UMA LINHA -->
       <div class="container-planos">
         
         <!-- Combo 1 -->
