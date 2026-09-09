@@ -20,20 +20,26 @@
       font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    /* CONTAINER PRINCIPAL PARA ACOMODAR O MENU LATERAL */
+    /* CONTAINER PRINCIPAL CENTRALIZADO NA TELA */
     .layout-container {
       display: flex;
-      max-width: 1300px;
+      max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
       gap: 30px;
       align-items: flex-start;
+      justify-content: center;
     }
 
-    /* MENU LATERAL ESQUERDO (Espaço Roxo) */
+    /* MENU LATERAL ESQUERDO */
     .sidebar-menu {
-      width: 220px;
+      width: 230px;
       background-color: #1a1a1a;
       border: 1px solid #2a2a2a;
       border-radius: 12px;
@@ -42,6 +48,7 @@
       flex-direction: column;
       gap: 12px;
       flex-shrink: 0;
+      margin-top: 15px;
     }
 
     .sidebar-btn {
@@ -56,7 +63,15 @@
       text-align: left;
       transition: all 0.2s ease;
       text-decoration: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sidebar-btn span.subtext {
+      font-size: 11px;
+      color: #888888;
+      font-weight: normal;
     }
 
     .sidebar-btn:hover {
@@ -69,6 +84,7 @@
     .main-content {
       flex: 1;
       width: 100%;
+      max-width: 900px;
     }
 
     header {
@@ -144,7 +160,7 @@
       line-height: 1.5;
     }
 
-    /* BARRA DE TRANSIÇÃO ESTILO REIS HOSTING */
+    /* BARRA DE TRANSIÇÃO */
     .switch-wrapper {
       display: flex;
       align-items: center;
@@ -196,7 +212,7 @@
       z-index: 1;
     }
 
-    /* CONTAINER DOS 5 COMBOS */
+    /* CONTAINER DOS COMBOS */
     .container-planos {
       display: flex;
       flex-wrap: wrap;
@@ -294,6 +310,7 @@
       .sidebar-menu {
         width: 100%;
         max-width: 440px;
+        margin-top: 0;
       }
     }
 
@@ -315,19 +332,19 @@
 
   <div class="layout-container">
     
-    <!-- MENU LATERAL (ESPAÇO ROXO DA SUA IMAGEM) -->
-    <div class="card-servidores" onclick="window.open('https://meninotazz.github.io/lotus-servidores-repositorio/', '_blank')" style="cursor: pointer;">
-  <span>🎮 Servidores Minecraft</span>
-  <span>Minecraft</span>
-</div>
+    <!-- MENU LATERAL -->
+    <aside class="sidebar-menu">
+      <a href="https://meninotazz.github.io/lotus-servidores-repositorio/" target="_blank" class="sidebar-btn">
+        <span>🎮 Servidores Minecraft</span>
+        <span class="subtext">Repositório</span>
+      </a>
 
+      <a href="https://meninotazz.github.io/Duvidas-Frequentes-da-lotus-hosting/" target="_blank" class="sidebar-btn">
+        <span>❓ Dúvidas Frequentes</span>
+        <span class="subtext">Ajuda & Suporte</span>
+      </a>
+    </aside>
 
-    <div class="card-servidores" onclick="window.open('https://meninotazz.github.io/Duvidas-Frequentes-da-lotus-hosting/', '_blank')" style="cursor: pointer;">
-  <span>❓ Dúvidas Frequentes</span>
-  <span>Minecraft</span>
-</div>
-
-    
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-content">
       
@@ -336,7 +353,7 @@
           <img src="logo.png" alt="Logo Hospedagem Lotus" class="logo-site">
           <div class="header-texto">
             <h1>Hospedagem Lotus</h1>
-            <p>Sua experiencia de minecraft em outro nivel.</p>
+            <p>Sua experiência de Minecraft em outro nível.</p>
             <div class="ping-badge">⚡ Latência Média: 17 ms a 35 ms</div>
           </div>
         </div>
@@ -345,11 +362,11 @@
       <div class="destaque-flex">
         <h2>⏰ Pague Apenas Pelo Tempo Que Jogar!</h2>
         <p>
-          ou mensalmente personalizando dia e hora! E se quiser me ajudar compre o anual por preços compensáveis!
+          Ou pague mensalmente personalizando dia e hora! E se quiser me ajudar compre o anual por preços compensáveis!
         </p>
       </div>
 
-      <!-- BARRA DE TRANSIÇÃO ESTILO REIS HOSTING -->
+      <!-- BARRA DE TRANSIÇÃO -->
       <div class="switch-wrapper">
         <div class="switch-container">
           <div class="switch-slider" id="slider"></div>
@@ -361,7 +378,7 @@
         </div>
       </div>
 
-      <!-- OS 5 COMBOS COM SEUS PREÇOS EXATOS -->
+      <!-- OS 5 COMBOS -->
       <div class="container-planos">
         
         <!-- Combo 1 -->
@@ -392,7 +409,7 @@
             <li><strong>3 GB RAM</strong> NVMe</li>
             <li>Até 10 Mods</li>
             <li>Até 5 Plugins</li>
-            <li>Painel para saber suas horas</li></li>
+            <li>Painel para saber suas horas</li>
             <li>Tempo Personalizável</li>
           </ul>
           <a href="https://discord.com/invite/TtRDXFy3A" class="btn" target="_blank">Alugar no Discord</a>
@@ -457,11 +474,9 @@
 
   <script>
     function selecionarOpcao(posicao, tipo) {
-      // Animação da pílula deslizante (0%, 100%, 200%, 300%)
       const slider = document.getElementById('slider');
       slider.style.transform = `translateX(${posicao * 100}%)`;
 
-      // Atualiza o destaque nos textos dos botões
       const opcoes = document.querySelectorAll('.switch-option');
       opcoes.forEach((opt, idx) => {
         if (idx === posicao) {
@@ -471,7 +486,6 @@
         }
       });
 
-      // Tabela de preços atualizados conforme o período escolhido
       const dados = {
         mensal: {
           p1: "R$ 23,59", sub1: "/ mês",
@@ -503,7 +517,6 @@
         }
       };
 
-      // Atualiza os valores na tela
       document.getElementById('p1').innerText = dados[tipo].p1;
       document.getElementById('sub1').innerText = dados[tipo].sub1;
 
